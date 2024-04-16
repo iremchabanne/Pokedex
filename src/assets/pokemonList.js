@@ -1,6 +1,3 @@
-import "./App.css";
-import PokemonCard from "./components/PokemonCard";
-
 const pokemonList = [
   {
     name: "BULBASAUR",
@@ -30,12 +27,4 @@ const pokemonList = [
   },
 ];
 
-function App() {
-  return (
-    <div>
-      <PokemonCard pokemon={pokemonList[3]} />
-    </div>
-  );
-}
-
-export default App;
+export default pokemonList;
