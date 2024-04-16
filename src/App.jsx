@@ -1,5 +1,6 @@
 import "./App.css";
 import PokemonCard from "./components/PokemonCard";
+import { useState } from "react";
 
 const pokemonList = [
   {
@@ -28,12 +29,35 @@ const pokemonList = [
     definition:
       "Nidorina is a female-only species. Nidorina is a gentle Pokémon, and it is known to be a caring mother that chews food for its young. It seems to display close family bonds with others of its kind, and becomes nervous when separated.",
   },
+  {
+    name: "PSYDUCK",
+    imgSrc: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/054.png",
+    definition:
+      "Psyduck is constantly stunned by its headache, and usually just stands there vacantly, trying to calm its headache. When the headache gets too bad, its brain cells awaken, allowing it to use strong psychic powers. Some use their vacant look to their advantage, lulling the enemy and then using its psychokinetic powers.",
+  },
+  {
+    name: "DRAGONAIR",
+    imgSrc: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/148.png",
+    definition:
+      "Dragonair are wary Pokémon. They are quick to respond to perceived threats, and they tend to flee when they sense danger. Dragonair shed their skin periodically, but not as frequently as Dratini. These skins were at first mistaken for huge Dratini, and fetched hefty sums as collectors clamored over them. According to popular legend, seeing a Dragonair flying overhead at the start of a new year is a sign of good health for the rest of the year.Dragonair live in the bottoms of many lakes, but they usually never come to the surface.",
+  },
 ];
 
 function App() {
+  const [index, setIndex] = useState(0);
+  const handleClick = () => {
+    index >= pokemonList.length - 1 ? setIndex(0) : setIndex(index + 1);
+  };
+
+  const handlePrevious = () => {
+    index <= 0 ? setIndex(pokemonList.length - 1) : setIndex(index - 1);
+  };
+
   return (
     <div>
-      <PokemonCard pokemon={pokemonList[3]} />
+      <PokemonCard pokemon={pokemonList[index]} />
+      <button onClick={handlePrevious}>Previous</button>
+      <button onClick={handleClick}>Next</button>
     </div>
   );
 }
