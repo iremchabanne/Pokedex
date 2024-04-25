@@ -1,10 +1,16 @@
-const NavBar = ({ handleClick, handlePrevious }) => {
-  return (
-    <div>
-      <button onClick={handlePrevious}>Previous</button>
-      <button onClick={handleClick}>Next</button>
-    </div>
-  );
+const NavBar = ({ pokemonNames, handleClick }) => {
+  return pokemonNames.map((name, currentNamesIndex) => {
+    return (
+      <button
+        onClick={() => {
+          handleClick(currentNamesIndex);
+        }}
+        key={name}
+      >
+        {name}
+      </button>
+    );
+  });
 };
 
 export default NavBar;
