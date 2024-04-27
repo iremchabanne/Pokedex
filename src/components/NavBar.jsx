@@ -4,6 +4,9 @@ const NavBar = ({ pokemonNames, handleClick }) => {
       <button
         onClick={() => {
           handleClick(currentNamesIndex);
+          if (name == "PIKACHU") {
+            alert("pika pikachu!!!");
+          }
         }}
         key={name}
       >

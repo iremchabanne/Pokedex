@@ -25,6 +25,13 @@ const pokemonList = [
     definition:
       "Nidorina is a female-only species. Nidorina is a gentle Pokémon, and it is known to be a caring mother that chews food for its young. It seems to display close family bonds with others of its kind, and becomes nervous when separated.",
   },
+  {
+    name: "PIKACHU",
+    imgSrc:
+      "https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png",
+    definition:
+      "Pikachu was designed around the concept of electricity. They are creatures that have short, yellow fur with brown markings covering their backs and parts of their lightning bolt-shaped tails. They have black-tipped, pointed ears and red circular pouches on their cheeks, which can spark with electricity.",
+  },
 ];
 
 export default pokemonList;
